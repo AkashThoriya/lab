@@ -138,13 +138,13 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-1"></div>
+                                    <!-- <div class="col-md-1"></div>
                                     <div class="form-group col-md-5 mt-4">
                                           <input type="checkbox" id="checkboxSuccess1">
                                           <label for="checkboxSuccess1" class="control-label-form">
                                               &nbsp;&nbsp;Copy Billing to Shipping
                                           </label>
-                                      </div>
+                                      </div> -->
                                 </div>
                             </div>
                         </div>
@@ -202,7 +202,7 @@
                             </div>
                             <div class="form-group col-md-3 col-sm-12">
                                 <label class="control-label-form" for="contactpersonmobile">Mobile Number</label>
-                                <input type="text" class="form-control" id="contactpersonmobile" name="contactpersonmobile" placeholder="Enter Contact Person Mobile Number">
+                                <input type="text" class="form-control" id="contactpersonmobile" name="contactpersonmobile" placeholder="Contact Person Mobile Number">
                             </div>
                         </div>
                         <div class="row mt-3">
@@ -216,7 +216,7 @@
                             </div>
                             <div class="form-group col-md-3 col-sm-12">
                                 <label class="control-label-form" for="purchaseofficermobile">Mobile Number</label>
-                                <input type="text" class="form-control" id="purchaseofficermobile" name="purchaseofficermobile" placeholder="Enter Purchase Officer Mobile Number">
+                                <input type="text" class="form-control" id="purchaseofficermobile" name="purchaseofficermobile" placeholder="Purchase Officer Mobile Number">
                             </div>
                         </div>
 

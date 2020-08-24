@@ -15,35 +15,44 @@ class CreateCustomersTable extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
-            $table->string('detailid')->unique();
-            $table->string('groupid')->unique();
+            $table->string('detail_id')->unique();
+            $table->string('group_id')->unique();
             $table->string('name');
-            $table->string('sitename');
-            $table->string('gstnumber')->nullable();
-            $table->string('pannumber');
-            $table->string('billingaddress')->nullable();
-            $table->string('billingcity')->nullable();
-            $table->string('billingstate')->nullable();
-            $table->decimal('billingpincode',6)->nullable();
-            $table->string('shippingaddress')->nullable();
-            $table->string('shippingcity')->nullable();
-            $table->string('shippingstate')->nullable();
-            $table->decimal('shippingpincode',6)->nullable();
+            $table->string('site_name');
+            $table->string('gst_number')->nullable();
+            $table->string('pan_number');
+            $table->string('billing_address')->nullable();
+            $table->string('billing_city')->nullable();
+            $table->string('billing_state')->nullable();
+            $table->decimal('billing_pin_code',6)->nullable();
+            $table->string('shipping_address')->nullable();
+            $table->string('shipping_city')->nullable();
+            $table->string('shipping_state')->nullable();
+            $table->decimal('shipping_pincode',6)->nullable();
             $table->string('landline')->nullable();
             $table->string('mobilenumber1')->nullable();
             $table->string('mobilenumber2')->nullable();
             $table->string('companyemail1')->unique();
             $table->string('companyemail2')->unique();
             $table->string('contactperson')->nullable();
-            $table->string('contactpersonemail')->nullable();
-            $table->string('contactpersonmobile')->nullable();
-            $table->string('purchaseofficer')->nullable();
-            $table->string('purchaseofficerpersonemail')->nullable();
-            $table->string('purchaseofficerpersonmobile')->nullable();
+            $table->string('contact_personemail')->nullable();
+            $table->string('contact_personmobile')->nullable();
+            $table->string('purchase_officer')->nullable();
+            $table->string('purchaseofficer_person_email')->nullable();
+            $table->string('purchaseofficer_person_mobile')->nullable();
+
+            $table->string('bank_name')->nullable();
+            $table->string('bank_branch_detail')->nullable();
+            $table->string('calibration_charges')->nullable();
+            $table->string('cheque_or_ddnumber')->nullable();
+            $table->string('utr_number')->nullable();
+            $table->string('tds')->nullable();
+            $table->string('transaction_id')->nullable();
+
             $table->string('electrotech')->nullable();
             $table->string('thermal')->nullable();
             $table->string('pressure')->nullable();
-            $table->string('status')->default('Active');
+            $table->integer('active');
             $table->timestamps();
         });
     }

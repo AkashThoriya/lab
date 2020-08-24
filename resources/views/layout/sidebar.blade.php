@@ -81,6 +81,34 @@
                     </p>
                 </a>
             </li>
+            <li class="nav-item">
+                <a  class="nav-link">
+                    <i class="nav-icon fa fa-lg fa-fw fa-database"></i>
+                    <p>
+                        Masters
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{{route('bank.index')}}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Bank</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{route('make.index')}}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Make</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{route('transport.index')}}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Transport</p>
+                    </a>
+                  </li>
+                </ul>
+            </li>
 
             <li class="nav-item has-treeview">
                 <a  class="nav-link">

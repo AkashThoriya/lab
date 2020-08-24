@@ -26,6 +26,9 @@
     .activeMenu{
         background-color: #535a61 !important;
     }
+    .error{
+      color:red;
+    }
 </style>
 <!-- on page css -->
 @stack('css')

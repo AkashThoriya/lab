@@ -15,8 +15,7 @@ class CreateCustomersTable extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
-            $table->string('detail_id')->unique();
-            $table->string('group_id')->unique();
+            $table->string('detail_id')->nullable()->unique();
             $table->string('name');
             $table->string('site_name');
             $table->string('gst_number')->nullable();
@@ -41,18 +40,13 @@ class CreateCustomersTable extends Migration
             $table->string('purchaseofficer_person_email')->nullable();
             $table->string('purchaseofficer_person_mobile')->nullable();
 
-            $table->string('bank_name')->nullable();
-            $table->string('bank_branch_detail')->nullable();
-            $table->string('calibration_charges')->nullable();
-            $table->string('cheque_or_ddnumber')->nullable();
-            $table->string('utr_number')->nullable();
-            $table->string('tds')->nullable();
-            $table->string('transaction_id')->nullable();
+            $table->string('name_in_certificate')->nullable();
+            $table->string('address_in_certificate')->nullable();
 
             $table->string('electrotech')->nullable();
             $table->string('thermal')->nullable();
             $table->string('pressure')->nullable();
-            $table->integer('active');
+            $table->integer('active')->default(1);
             $table->timestamps();
         });
     }

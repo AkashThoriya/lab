@@ -16,9 +16,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['prefix' => '/customer'], function(){
-    Route::any('/','CustomerController@index')->name('customer');
-    Route::any('/add','CustomerController@create')->name('addCustomer');
+Route::group(['prefix' => 'customer'], function(){
+    Route::get('/', 'CustomerController@index')->name('customer.index');
+    Route::get('/create', 'CustomerController@create')->name('customer.create');
+    Route::post('/store', 'CustomerController@store')->name('customer.store');
+    Route::get('/{customer}', 'CustomerController@edit')->name('customer.edit');
+    Route::patch('/{customer}', 'CustomerController@update')->name('customer.update');
+    Route::delete('/{customer}', 'CustomerController@destroy')->name('customer.destroy');
 });
 
 Route::get('/WorkOrder', function () {

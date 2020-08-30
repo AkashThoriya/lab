@@ -38,7 +38,7 @@
               </li>
 
             <li class="nav-item has-treeview">
-                <a href="{{route('customer')}}" class="nav-link @if (Request::is('customer*')) activeMenu @endif">
+                <a href="{{route('customer.index')}}" class="nav-link @if (Request::is('customer*')) activeMenu @endif">
                     <i class="nav-icon fas fa-user"></i>
                     <p>
                         Customers

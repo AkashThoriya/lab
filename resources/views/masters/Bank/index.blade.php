@@ -49,12 +49,12 @@
                                         <td>
                                         <form action="{{ route('bank.destroy', ['bankMaster' => $b]) }}" method="POST">
                                                 <a href="{{ route('bank.edit', ['bankMaster' => $b]) }}"><i class="fa fa-pencil" style="color: grey"></i></a>&nbsp;&nbsp;
-                                            
+
                                                 @method('DELETE')
                                                 @csrf
                                                 <button type="submit" style="border:none;"><i class="fa fa-trash" style="color: grey"></i></button>
                                         </form>
-                                        
+
                                         </td>
                                     </tr>
                                     <?php $count++ ?>
@@ -67,5 +67,5 @@
             <!-- /.card-body -->
         </div>
     </section>
-    
+
 @endsection

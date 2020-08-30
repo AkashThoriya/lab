@@ -7,79 +7,62 @@ use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
-        return view('Customer.customers');
+        $customers = Customer::active()->paginate(10);
+
+        return view('Customer.index', compact('customers'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        return view('Customer.addCustomer');
+        $customer = new Customer();
+
+        return view('Customer.create', compact('customer'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        // Customer::create($this->validateRequest());
+        Customer::create($request->all());
+
+        return redirect('customer');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Customer  $customer
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Customer $customer)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Customer  $customer
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Customer $customer)
     {
-        //
+        return view('Customer.edit', compact('customer'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Customer  $customer
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Customer $customer)
     {
-        //
+        $customer->update($this->validateRequest());
+
+        return redirect('customer');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Customer  $customer
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Customer $customer)
     {
-        //
+        $customer->active = 0;
+        $customer->save();
+
+        return redirect('customer');
+    }
+
+    private function validateRequest()
+    {
+        return request()->validate([
+            'name' => 'required',
+            'gst_number' => 'required',
+            'pan_number' => 'required',
+            'active' => '',
+        ]);
     }
 }
+

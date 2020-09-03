@@ -47,6 +47,24 @@
             </li>
 
             <li class="nav-item has-treeview">
+                <a href="{{route('item.index')}}" class="nav-link @if (Request::is('item*')) activeMenu @endif">
+                    <i class="nav-icon fa fa-product-hunt"></i>
+                    <p>
+                        Items
+                    </p>
+                </a>
+            </li>
+
+            <li class="nav-item has-treeview">
+                <a href="{{route('quotation.index')}}" class="nav-link @if (Request::is('quotation*')) activeMenu @endif">
+                    <i class="nav-icon fa fa-file"></i>
+                    <p>
+                        Quotation
+                    </p>
+                </a>
+            </li>
+
+            <li class="nav-item has-treeview">
                 <a href="{{route('WorkOrder')}}" class="nav-link @if (Request::is('WorkOrder')) activeMenu @endif">
                     <i class="nav-icon fa fa-lg fa-fw fa-shopping-basket"></i>
                     <p>

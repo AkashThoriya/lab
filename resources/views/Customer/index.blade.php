@@ -48,13 +48,22 @@
                                             <td>10</td>
                                             <td>20</td>
                                             <td>
-                                                <form action="{{ route('customer.destroy', ['customer' => $customer]) }}" method="POST">
-                                                        <a href="{{ route('customer.edit', ['customer' => $customer]) }}"><i class="fa fa-pencil" style="color: grey"></i></a>&nbsp;&nbsp;
-
-                                                        @method('DELETE')
-                                                        @csrf
-                                                        <button type="submit" style="border:none;"><i class="fa fa-trash" style="color: grey"></i></button>
-                                                </form>
+                                                    <div class="dropdown">
+                                                        <button type="button" class="btn btn-default" data-toggle="dropdown">
+                                                            <i class="fa fa-bars" style="color: grey"></i>
+                                                        </button>
+                                                        <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="{{ route('customer.edit', ['customer' => $customer]) }}">Edit</a>
+                                                        <form action="{{ route('customer.destroy', ['customer' => $customer]) }}" method="POST">
+                                                            @method('DELETE')
+                                                            @csrf
+                                                            <button class="dropdown-item" type="submit" style="border:none;">Delete</button>
+                                                        </form>
+                                                        <div class="dropdown-header">Export SRF</div>
+                                                            <a class="dropdown-item" href="#">Excel</a>
+                                                            <a class="dropdown-item" href="#">Pdf</a>
+                                                        </div>
+                                                    </div>
                                                 </td>
                                         </tr>
                                     <?php $count++ ?>

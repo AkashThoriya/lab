@@ -25,6 +25,25 @@ Route::group(['prefix' => 'customer'], function(){
     Route::delete('/{customer}', 'CustomerController@destroy')->name('customer.destroy');
 });
 
+Route::group(['prefix' => 'item'], function(){
+    Route::get('/', 'ItemController@index')->name('item.index');
+    Route::get('/create', 'ItemController@create')->name('item.create');
+    Route::post('/store', 'ItemController@store')->name('item.store');
+    Route::get('/{item}', 'ItemController@edit')->name('item.edit');
+    Route::patch('/{item}', 'ItemController@update')->name('item.update');
+    Route::delete('/{item}', 'ItemController@destroy')->name('item.destroy');
+});
+
+
+Route::group(['prefix' => 'quotation'], function(){
+    Route::get('/', 'QuotationController@index')->name('quotation.index');
+    Route::get('/create', 'QuotationController@create')->name('quotation.create');
+    Route::post('/store', 'QuotationController@store')->name('quotation.store');
+    Route::get('/{quotation}', 'QuotationController@edit')->name('quotation.edit');
+    Route::patch('/{quotation}', 'QuotationController@update')->name('quotation.update');
+    Route::delete('/{quotation}', 'QuotationController@destroy')->name('quotation.destroy');
+});
+
 Route::get('/WorkOrder', function () {
     return view('WorkOrder.WorkOrder');
 })->name('WorkOrder');

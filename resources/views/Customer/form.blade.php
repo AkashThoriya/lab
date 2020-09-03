@@ -27,7 +27,7 @@
             <div class="col-md-5">
                 <div class="form-group">
                     <label class="control-label-form">Billing Address</label>
-                    <textarea class="form-control" rows="2" value="{{old('billing_address') ?? $customer->billing_address }}" name="billing_address"></textarea>
+                    <textarea class="form-control" rows="2" name="billing_address">{{old('billing_address') ?? $customer->billing_address }}</textarea>
                 </div>
             </div>
 
@@ -35,7 +35,7 @@
             <div class="col-md-5">
                 <div class="form-group">
                     <label class="control-label-form">Shipping Address</label>
-                    <textarea class="form-control" rows="2" value="{{old('shipping_address') ?? $customer->shipping_address }}" name="shipping_address"></textarea>
+                    <textarea class="form-control" rows="2" name="shipping_address">{{old('shipping_address') ?? $customer->shipping_address }}</textarea>
                 </div>
             </div>
     </div>
@@ -198,8 +198,30 @@
         <div class="col-md-5">
             <div class="form-group">
                 <label class="control-label-form">Address in certificate</label>
-                <textarea class="form-control" rows="2" value="{{old('address_in_certificate') ?? $customer->address_in_certificate }}" name="address_in_certificate"></textarea>
+                <textarea class="form-control" rows="2" name="address_in_certificate">{{old('address_in_certificate') ?? $customer->address_in_certificate }}</textarea>
             </div>
+        </div>
+    </div>
+
+    <div class="row mt-3"></div>
+    <hr>
+
+    <div class="row mt-4">
+        <div class="form-group col-md-4 col-sm-12">
+            <label class="control-label-form" for="bank_name">Bank name</label>
+            <input type="text" class="form-control" id="bank_name" value="{{old('bank_name') ?? $customer->bank_name }}" name="bank_name">
+        </div>
+        <div class="form-group col-md-3 col-sm-12">
+            <label class="control-label-form" for="branch_name">Bank name</label>
+            <input type="text" class="form-control" id="branch_name" value="{{old('branch_name') ?? $customer->branch_name }}" name="branch_name">
+        </div>
+        <div class="form-group col-md-2 col-sm-12">
+            <label class="control-label-form" for="ifsc_code">IFSC code</label>
+            <input type="text" class="form-control" id="ifsc_code" value="{{old('ifsc_code') ?? $customer->ifsc_code }}" name="ifsc_code">
+        </div>
+        <div class="form-group col-md-2 col-sm-12">
+            <label class="control-label-form" for="account_number">Account number</label>
+            <input type="number" class="form-control" id="account_number" value="{{old('account_number') ?? $customer->account_number }}" name="account_number">
         </div>
     </div>
 

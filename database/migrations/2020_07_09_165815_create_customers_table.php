@@ -43,6 +43,11 @@ class CreateCustomersTable extends Migration
             $table->string('name_in_certificate')->nullable();
             $table->string('address_in_certificate')->nullable();
 
+            $table->string('bank_name')->nullable();
+            $table->string('branch_name')->nullable();
+            $table->string('ifsc_code')->nullable();
+            $table->string('account_number')->nullable();
+
             $table->string('electrotech')->nullable();
             $table->string('thermal')->nullable();
             $table->string('pressure')->nullable();

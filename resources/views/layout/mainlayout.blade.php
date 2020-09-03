@@ -40,8 +40,6 @@
 
 <div class="wrapper">
 
-
-
   <!-- include header -->
   @include('layout.header')
 
@@ -56,10 +54,8 @@
    <!-- include sidebar -->
   @include('layout.footer')
 
-   <!-- include sidebar -->
+
   @include('layout.script')
-
-
 
 </div>
 </body>
